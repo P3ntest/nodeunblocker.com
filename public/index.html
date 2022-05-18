@@ -3,22 +3,44 @@
   <head>
     <title>Web Proxy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="main">
-        <h1>Web Proxy</h1>
-
-        <div id="error"></div>
-
-        <form action="no-js" method="get" id="unblocker-form">
-          <p>
-            URL:
-            <input type="text" id="url" name="url" autofocus="autofocus" />
-            <input type="submit" value="Go" />
-          </p>
-        </form>
-      </div>
+      <h1>Web Proxy</h1>
+      <p>
+        This proxies your request through our server, enabling you to browse the
+        whole internet uncensored. Data is provided AS IS with no liability.
+      </p>
+      <div id="error"></div>
+      <form action="no-js" method="get" id="unblocker-form">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">https://</span>
+          <input
+            type="text"
+            id="url"
+            name="url"
+            autofocus="autofocus"
+            placeholder="URL to visit"
+            class="form-control"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+          <input type="submit" class="btn btn-primary" value="Go" />
+        </div>
+      </form>
+      <p>
+        Originally made by
+        <a href="https://github.com/nfriedly/">nfriedly</a> and modified by
+        <a href="https://github.com/p3ntest">P3ntest</a>
+      </p>
     </div>
     <script>
       function $(id) {
