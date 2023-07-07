@@ -61,14 +61,15 @@ var unblocker = new Unblocker({
   responseMiddleware: [googleAnalyticsMiddleware],
 });
 
-app.use(
-  basicAuth({
-    challenge: true,
-    users: {
-      [process.env.USERNAME ?? "admin"]: process.env.PASSWORD ?? "password",
-    },
-  })
-);
+if (process.env.DISABLE_AUTH !== "true")
+  app.use(
+    basicAuth({
+      challenge: true,
+      users: {
+        [process.env.USERNAME ?? "admin"]: process.env.PASSWORD ?? "password",
+      },
+    })
+  );
 // this line must appear before any express.static calls (or anything else that sends responses)
 app.use(unblocker);
 
